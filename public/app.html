@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>SAEP Estoque</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Gestão de Estoque</h1>
+    <div>
+      <span id="usuario-logado"></span>
+      <button id="btn-logout">Sair</button>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="principal">Principal</button>
+    <button class="tab-btn" data-tab="produtos">Produtos</button>
+    <button class="tab-btn" data-tab="estoque">Estoque</button>
+    <button class="tab-btn" data-tab="historico">Histórico</button>
+  </nav>
+
+  <main>
+    <section id="tab-principal" class="tab-content">
+      <h2>Alertas de estoque mínimo</h2>
+      <table>
+        <thead><tr><th>Produto</th><th>Quantidade</th><th>Mínimo</th></tr></thead>
+        <tbody id="lista-alertas"></tbody>
+      </table>
+    </section>
+
+    <section id="tab-produtos" class="tab-content" hidden>
+      <h2>Produtos</h2>
+      <input type="text" id="busca-produto" placeholder="Pesquisar produto...">
+      <form id="form-produto">
+        <input type="hidden" id="produto-id">
+        <input type="text" id="produto-nome" placeholder="Nome" required>
+        <select id="produto-tipo" required>
+          <option value="smartphone">Smartphone</option>
+          <option value="notebook">Notebook</option>
+          <option value="smart tv">Smart TV</option>
+        </select>
+        <input type="number" id="produto-quantidade" placeholder="Quantidade" required min="0">
+        <input type="number" id="produto-minimo" placeholder="Estoque mínimo" required min="0">
+        <button type="submit">Salvar</button>
+        <button type="button" id="btn-cancelar-produto">Cancelar</button>
+      </form>
+      <table>
+        <thead><tr><th>Nome</th><th>Tipo</th><th>Qtd</th><th>Mínimo</th><th>Ações</th></tr></thead>
+        <tbody id="lista-produtos"></tbody>
+      </table>
+    </section>
+
+    <section id="tab-estoque" class="tab-content" hidden>
+      <h2>Movimentação de estoque</h2>
+      <form id="form-mov">
+        <select id="mov-produto" required></select>
+        <select id="mov-tipo" required>
+          <option value="entrada">Entrada</option>
+          <option value="saida">Saída</option>
+        </select>
+        <input type="number" id="mov-quantidade" placeholder="Quantidade" required min="1">
+        <button type="submit">Registrar</button>
+        <p id="mov-msg"></p>
+      </form>
+    </section>
+
+    <section id="tab-historico" class="tab-content" hidden>
+      <h2>Histórico de movimentações</h2>
+      <table>
+        <thead><tr><th>Data</th><th>Produto</th><th>Tipo</th><th>Qtd</th><th>Responsável</th></tr></thead>
+        <tbody id="lista-historico"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
