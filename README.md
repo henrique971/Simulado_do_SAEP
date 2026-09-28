@@ -6,7 +6,6 @@ Este repositório contém o código da aplicação desenvolvida para a simulaç�
 
 ## 🛠️ Tecnologias Utilizadas
 
-> *Adicione ou ajuste as tecnologias utilizadas conforme o seu projeto (ex: HTML/CSS/JS, Node.js, React, Python, etc.)*
 
 - **Linguagem / Framework:** (ex: JavaScript / Node.js)
 - **Gerenciador de Pacotes:** (ex: npm ou yarn)
